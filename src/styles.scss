@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@alfresco/adf-core/prebuilt-themes/adf-blue-orange.css';
+@import 'app/ui/application';
+
+body,
+html {
+  height: 100%;
+  font-family: 'Muli', 'Helvetica', 'Arial', sans-serif !important;
+}
+
+body {
+  margin: 0;
+}
+
+.adf-start-process {
+  width: 85% !important;
+}
+
+#field-instructions-container {
+  padding-top: 12px;
+}
+
+.adf-process-input-container {
+  display: none !important;
+}
+
+.mat-tab-body-content {
+  overflow: hidden !important;
+}
+
+.adf-container-widget__header-text {
+  font-size: 16px;
+  margin-top: 28px;
+}
+
+body>main>app-root>app-layout>adf-upload-drag-area>div>adf-sidenav-layout>div>adf-layout-container>mat-sidenav-container>mat-sidenav-content>div>div>aca-task-details>div>adf-viewer {
+  width: 75% !important;
+}
+
+#adf-form-approve {
+  background-color: green !important;
+  color: #FFFFFF;
+}
+
+#adf-form-rejected {
+  background-color: red !important;
+  color: rgb(63, 63, 63);
+}
+
+#adf-form-additional_information_required {
+  background-color: #e8e8e8 !important;
+  color: rgb(63, 63, 63);
+}
+
+#adf-form-save {
+  background-color: #e8e8e8 !important;
+  color: rgb(63, 63, 63);
+
+}

@@ -1,0 +1,61 @@
+<!--<adf-toolbar title="{{ customerName }} ({{ customerId }})" class="toolbar">
+</adf-toolbar>
+
+
+<div class="case_content" fxLayout="row" fxLayoutAlign="space-around stretch">
+  <div fxFlex="48%" fxFlexFill="50">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar>
+          <mat-icon>list</mat-icon>
+        </div>
+        <mat-card-title>Recent Documents</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <adf-document-list [node]="recentDocuments" (preview)="preview($event)">
+          <data-columns>
+            <data-column key="$thumbnail" type="image"></data-column>
+            <data-column title="Name" key="name" class="full-width ellipsis-cell"></data-column>
+            <data-column title="Size" type="fileSize" key="content.sizeInBytes"></data-column>
+            <data-column title="Modified" type="date" format="timeAgo" key="modifiedAt"></data-column>
+
+          </data-columns>
+        </adf-document-list>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+  <div fxFlex="48%">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar>
+          <mat-icon>assignment</mat-icon>
+        </div>
+        <mat-card-title>Tasks</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <adf-datatable [data]="tasks">
+        </adf-datatable>
+
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>
+<br />-->
+<div fxLayout="row" fxLayoutAlign="space-around stretch">
+  <div fxFlex="98%">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar>
+          <mat-icon>list</mat-icon>
+        </div>
+        <mat-card-title><a class="dashboard-header-link" [routerLink]="['/libraries', nodeId]">Account Folder</a>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <adf-document-list [currentFolderId]="nodeId"></adf-document-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

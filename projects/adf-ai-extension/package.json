@@ -1,0 +1,12 @@
+{
+  "name": "@alfresco/adf-ai-extension",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.0.0",
+    "@angular/core": "^7.0.0",
+    "@alfresco/adf-core": "^3.0.0",
+    "@alfresco/js-api": "^3.0.0",
+    "@alfresco/adf-extensions": "^3.0.0",
+    "ngx-monaco-editor": "^6.0.0"
+  }
+}

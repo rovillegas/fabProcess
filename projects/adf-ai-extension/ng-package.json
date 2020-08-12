@@ -1,0 +1,13 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/@alfresco/adf-ai-extension",
+  "lib": {
+    "entryFile": "src/public_api.ts",
+    "flatModuleFile": "ai-extension",
+    "umdModuleIds": {
+      "@alfresco/adf-core": "@alfresco/adf-core",
+      "@alfresco/adf-extensions": "@alfresco/adf-extensions",
+      "@alfresco/js-api": "@alfresco/js-api"
+    }
+  }
+}

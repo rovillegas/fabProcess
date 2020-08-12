@@ -1,0 +1,14 @@
+{
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "editor.formatOnSave": true,
+  "[json]": {
+    "editor.formatOnSave": false
+  },
+  "markdownlint.config": {
+    "MD033": false
+  },
+  "git.ignoreLimitWarning": true
+}

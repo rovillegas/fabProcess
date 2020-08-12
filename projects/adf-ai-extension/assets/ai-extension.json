@@ -1,0 +1,32 @@
+{
+  "$id": "db8b2870-725c-4181-99f2-e50b52c14077",
+  "$version": "1.0.0",
+  "$name": "adf ai extension",
+  "$description": "adf ai plugin",
+  "$vendor": "Alfresco",
+  "$license": "Apache-2.0",
+  "$runtime": "1.7.0",
+
+  "features": {
+    "viewer": {
+      "content": [
+        {
+          "id": "ai.viewer.png",
+          "fileExtension": "png",
+          "component": "ai-extension.main.component",
+          "rules": {
+            "disabled": "ai.viewer.disabled"
+          }
+        },
+        {
+          "id": "ai.viewer.jpg",
+          "fileExtension": "jpg",
+          "component": "ai-extension.main.component",
+          "rules": {
+            "disabled": "ai.viewer.disabled"
+          }
+        }
+      ]
+    }
+  }
+}

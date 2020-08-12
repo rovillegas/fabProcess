@@ -1,0 +1,192 @@
+{
+  "$schema": "../../../extension.schema.json",
+  "$version": "1.0.0",
+  "$name": "plugin1",
+  "$id": "process.extension",
+  "$description": "Process Extension",
+  "$vendor": "Alfresco Software, Ltd.",
+  "$license": "LGPL-3.0",
+  "$runtime": "1.7.0",
+
+  "routes": [
+    {
+      "id": "process.extension.tasks.route",
+      "path": "process/tasks",
+      "layout": "app.layout.main",
+      "component": "process.extension.tasks.component",
+      "auth": ["app.auth"]
+    },
+    {
+      "id": "process.extension.process.start.route",
+      "path": "process/start-process",
+      "layout": "app.layout.main",
+      "component": "process.extension.process.start.component",
+      "auth": ["app.auth"]
+    },
+    {
+      "id": "process.extension.process.task.details.route",
+      "path": "process/task-details/:taskId",
+      "layout": "app.layout.main",
+      "component": "process.extension.process.task.details.component",
+      "auth": ["app.auth"]
+    },
+    {
+      "id": "process.extension.customer.search.route",
+      "path": "customers",
+      "layout": "app.layout.main",
+      "component": "process.extension.customer.search.component",
+      "auth": ["app.auth"]
+    },
+    {
+      "id": "process.extension.customer.dashboard.route",
+      "path": "customer/:node/dashboard",
+      "layout": "app.layout.main",
+      "component": "process.extension.customer.dashboard.component",
+      "auth": ["app.auth"]
+    }
+
+
+
+
+
+  ],
+
+  "actions": [
+    {
+      "id": "process.extension.actions.start.process",
+      "type": "NAVIGATE_ROUTE",
+      "payload": "$(['process/start-process'])"
+    },
+    {
+      "id": "process.extension.actions.ai.apply.drivers.license.data",
+      "type": "PROCESS_EXTENSION_AI_APPLY_DRIVERS_LICENSE",
+      "payload": "$(context.selection.first.entry)"
+    },
+    {
+      "id": "process.extension.actions.ai.apply.drivers.license.data_v2",
+      "type": "PROCESS_EXTENSION_AI_APPLY_DRIVERS_LICENSE_V2",
+      "payload": "$(context.selection.first.entry)"
+    }
+
+
+
+  ],
+
+  "features": {
+    "create": [
+      {
+        "id": "process.extension.create.process",
+        "order": 700,
+        "icon": "assignment",
+        "title": "New Letter of Credit",
+        "description": "New Letter of Credit",
+        "description-disabled": "Not allowed",
+        "actions": {
+          "click": "process.extension.actions.start.process"
+        }
+      }
+    ],
+
+    "navbar": [
+      {
+        "id": "app.navbar.secondary",
+        "items": [
+          {
+            "id": "app.navbar.shared",
+            "rules": {
+              "visible": "false"
+            }
+          },
+          {
+            "id": "app.navbar.recentFiles",
+            "rules": {
+              "visible": "false"
+            }
+          },
+          {
+            "id": "app.navbar.favorites",
+            "rules": {
+              "visible": "false"
+            }
+          },
+          {
+            "id": "app.navbar.trashcan",
+            "rules": {
+              "visible": "false"
+            }
+          },
+          {
+            "id": "process.extension.tasks.nav",
+            "icon": "assignment",
+            "title": "Tasks",
+            "route": "process.extension.tasks.route"
+          },
+          {
+            "id": "process.extension.customer.search.nav",
+            "icon": "search",
+            "title": "Accounts",
+            "route": "process.extension.customer.search.route"
+          }
+
+
+        ]
+      }
+    ],
+    "toolbar": [
+      {
+        "id": "app.toolbar.more",
+        "children": [
+          {
+            "id": "process.extension.toolbar.ai.drivers.license",
+            "order": 92,
+            "icon": "edit",
+            "title": "Extract AI Phase 1",
+            "actions": {
+              "click": "process.extension.actions.ai.apply.drivers.license.data"
+            }
+          },
+          {
+            "id": "process.extension.toolbar.ai.drivers.licensev2",
+            "order": 93,
+            "icon": "edit",
+            "title": "Extract AI Phase 2",
+            "actions": {
+              "click": "process.extension.actions.ai.apply.drivers.license.data_v2"
+            }
+          }
+
+        ]
+      }
+    ],
+    "viewer": {
+      "toolbarActions": [
+        {
+            "id": "app.viewer.toolbar.more",
+            "children": [
+              {
+                "id": "process.extension.viewer.toolbar.ai.drivers.license",
+                "order": 1,
+                "icon": "edit",
+                "title": "Extract AI Phase 1",
+                "actions": {
+                  "click": "process.extension.actions.ai.apply.drivers.license.data"
+                }
+            },
+            {
+              "id": "process.extension.viewer.toolbar.ai.drivers.licensev2",
+              "order": 2,
+              "icon": "edit",
+              "title": "Extract AI Phase 2",
+              "actions": {
+                "click": "process.extension.actions.ai.apply.drivers.license.data_v2"
+              }
+          }
+
+          ]
+        }
+      ]
+    }
+
+  }
+
+}

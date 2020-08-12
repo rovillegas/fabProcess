@@ -1,0 +1,13 @@
+<adf-toolbar title="Find" class="toolbar"></adf-toolbar>
+
+<mat-card>
+  <div class="example-container">
+
+
+    <mat-form-field id="account" floatLabel="always">
+      <input matInput placeholder="Account Number" [(ngModel)]="account" />
+    </mat-form-field>
+  </div>
+
+  <button mat-button (click)="onSearch()">Search</button>
+</mat-card>

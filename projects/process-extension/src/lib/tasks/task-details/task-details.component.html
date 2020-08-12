@@ -1,0 +1,16 @@
+<!--
+<adf-form [taskId]="taskId" (formCompleted)="onCompleted($event)"></adf-form>
+
+-->
+
+<div class="form-container" *ngIf="!fileShowed">
+  <adf-form [taskId]="taskId" (formCompleted)="onCompleted($event)" (formContentClicked)="onFormContentClick($event)">
+  </adf-form>
+</div>
+
+
+<div class="viewer-container" *ngIf="fileShowed">
+  <adf-viewer #viewer [(showViewer)]="fileShowed" [blobFile]="content" [overlayMode]="false"
+    [displayName]="previewFileName" [showToolbar]="true" (goBack)="closeViewer($event)">
+  </adf-viewer>
+</div>

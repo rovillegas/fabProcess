@@ -1,0 +1,25 @@
+<adf-tasklist
+  [appId]="'2'"
+  [state]="'open'"
+  [assignment]="'assignee'"
+  (rowClick)="navigateToTask($event)"
+>
+  <data-columns>
+    <data-column
+      key="name"
+      title="Task"
+      class="full-width name-column"
+    ></data-column>
+    <data-column
+      key="created"
+      title="Created"
+      class="name-column"
+    ></data-column>
+
+    <data-column key="assignee" title="Assignee">
+      <ng-template let-entry="$implicit">
+        <div>{{ entry.row.obj.assignee | fullName }}</div>
+      </ng-template>
+    </data-column>
+  </data-columns>
+</adf-tasklist>

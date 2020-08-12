@@ -1,0 +1,15 @@
+:host {
+    height: 100%;
+    overflow: auto;
+}
+
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
